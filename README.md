@@ -1,0 +1,1 @@
+# karsus-diary
