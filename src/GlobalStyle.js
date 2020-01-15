@@ -17,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: #BEA6A0;
+    text-decoration: none;
+    cursor: pointer;
   }
 `
 

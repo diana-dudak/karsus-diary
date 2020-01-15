@@ -2,13 +2,13 @@ import React from 'react';
 import {
   MemoryRouter as Router,
   Switch,
-  Route,
-  // Link
+  Route
 } from "react-router-dom";
 
 import GlobalStyle from "./GlobalStyle";
 import LockScreen from './pages/LockScreen';
 import LogsList from './pages/LogsList';
+import Log from './components/Log';
 
 function App() {
   return (
@@ -22,13 +22,11 @@ function App() {
           <Route exact path="/">
             <LogsList />
           </Route>
+          <Route path="/log/:id">
+            <Log>
+            </Log>
+          </Route>
         </Switch>
-      {/*   <p>
-          <Link to="/">Lock</Link>
-        </p>
-        <p>
-          <Link to="/logs">Logs</Link>
-        </p> */}
       </div>
     </Router>
   );

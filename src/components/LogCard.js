@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { Link } from "react-router-dom";
 import { SAMPLE_TEXT } from "../data"
 
 const Card = styled.div`
@@ -31,16 +31,16 @@ const CardBody = styled.div`
   white-space: nowrap;
 `;
 
-const LogCard = () => {
+const LogCard = ({ data = { id: 1, title: "Title", date: "x xx xxxx", content: SAMPLE_TEXT } }) => {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Log #01</CardTitle>
-        <CardDate>1 Crops Month</CardDate>
-      </CardHeader>
-      <CardBody>
-        {SAMPLE_TEXT}
-      </CardBody>
+      <Link to={`/log/${data.id}`}>
+        <CardHeader>
+          <CardTitle>{data.title}</CardTitle>
+          <CardDate>{data.date}</CardDate>
+        </CardHeader>
+        <CardBody>{data.content}</CardBody>
+      </Link>
     </Card>
   );
 };
